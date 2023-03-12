@@ -13,7 +13,7 @@ public class MouseLook : MonoBehaviour
     private float mouseScrollSensitivity = 5.0f;
     private Vector2 mouseLook;
     private Transform playerBody;
-    /*private MyDefaultMouseInputActions controls; /* The use of this 'My_First_Person_Player_Controls()' 
+    private MyDefaultInputActions controls; /* The use of this 'My_First_Person_Player_Controls()' 
                                                          allows to access the Player_Controller only by using script
                                                          there is no need to set the Player Input component */
     private float xRotation = 0.0f;
@@ -28,9 +28,9 @@ public class MouseLook : MonoBehaviour
     private void Awake()
     {
         playerBody = transform.parent;
-        //controls = new MyDefaultMouseInputActions();
+        controls = new MyDefaultInputActions();
         Cursor.lockState = CursorLockMode.Locked;
-        //controls.Player.MouseZoomScrollY.performed += _x => scrollingValue = _x.action.ReadValue<float>();
+        controls.Player.MouseZoom.performed += _x => scrollingValue = _x.action.ReadValue<float>();
     }
 
     // Start is called before the first frame update
@@ -52,18 +52,18 @@ public class MouseLook : MonoBehaviour
     {
         //Debug.Log("(MouseLook.cs) OnEnable ON");
 
-        //controls.Enable();
-        //controls.Player.MouseZoomScrollY.started += SetCameraZoom;
-        //controls.Player.MouseZoomScrollY.canceled += SetCameraZoom;
+        controls.Enable();
+        controls.Player.MouseZoom.started += SetCameraZoom;
+        controls.Player.MouseZoom.canceled += SetCameraZoom;
     }
 
     private void OnDisable()
     {
         //Debug.Log("(MouseLook.cs) OnDisable ON");
 
-        //controls.Disable();
-        //controls.Player.MouseZoomScrollY.started -= SetCameraZoom;
-        //controls.Player.MouseZoomScrollY.canceled -= SetCameraZoom;
+        controls.Disable();
+        controls.Player.MouseZoom.started -= SetCameraZoom;
+        controls.Player.MouseZoom.canceled -= SetCameraZoom;
     }
 
     private void Look()
