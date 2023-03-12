@@ -24,17 +24,28 @@ public class NewInputMouseControler : MonoBehaviour,
     public void MousePosition(InputAction.CallbackContext context)
     {
         deplacementPointer = context.ReadValue<Vector2>();
-        Debug.Log("MousePosition");
+        //Debug.Log("MousePosition"); OK
     }
 
     public void MouseClick(InputAction.CallbackContext context)
     {
-        Debug.Log("MouseClick");
+        Debug.Log("Left button MouseClick"); // OK
+        Debug.Log("From MouseClick function, DeplacementPointer = " + deplacementPointer);
+        int numberOfCamerasInScene = Camera.allCamerasCount;
+        Debug.Log("Nombre de Caméras présentes dans la scène = " + numberOfCamerasInScene);
         Ray _ray = _camera.ScreenPointToRay(deplacementPointer);
+        //_ = Camera.main.gameObject.name;
+        //Debug.Log("Nom de l'objet rattaché = " + Camera.main.gameObject.name); // OK
+
         RaycastHit hit;
-        if (Physics.Raycast(_ray, out hit, 5))
+        if (Physics.Raycast(_ray, out hit, 20))
         {
-            Debug.DrawLine(_ray.origin, hit.point, Color.red, 5);
+            //Debug.Log("Inside Raycast OK"); // OK
+            Debug.DrawLine(_ray.origin, hit.point, Color.red, 3);
+            if(hit.collider != null) // Si on touche quelque chose
+            {
+                Debug.Log("GameObject Touché par le RayCast = " + hit.collider.transform.gameObject.name);
+            }
         }
     }
 
