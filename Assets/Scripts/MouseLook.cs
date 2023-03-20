@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class MouseLook : MonoBehaviour
+public class MouseLook : MonoBehaviour //Inherits from class `MonoBehaviour`. This makes it attachable to a game object as a component.
 {
     public float zoomCameraInput { get; private set; } = 0.0f;
     public float newZoomLevel = 0.0f;

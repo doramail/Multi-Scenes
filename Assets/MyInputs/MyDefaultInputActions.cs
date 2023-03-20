@@ -80,6 +80,15 @@ public partial class @MyDefaultInputActions : IInputActionCollection2, IDisposab
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Escape (Menu)"",
+                    ""type"": ""Button"",
+                    ""id"": ""4d6f9eb3-a52c-405d-935f-1611c301f531"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -234,6 +243,17 @@ public partial class @MyDefaultInputActions : IInputActionCollection2, IDisposab
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""MousePosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c3a65087-0e33-4013-9f18-b0935e00e9e0"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Escape (Menu)"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -827,6 +847,7 @@ public partial class @MyDefaultInputActions : IInputActionCollection2, IDisposab
         m_Player_MouseZoom = m_Player.FindAction("MouseZoom", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_MousePosition = m_Player.FindAction("MousePosition", throwIfNotFound: true);
+        m_Player_EscapeMenu = m_Player.FindAction("Escape (Menu)", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -904,6 +925,7 @@ public partial class @MyDefaultInputActions : IInputActionCollection2, IDisposab
     private readonly InputAction m_Player_MouseZoom;
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_MousePosition;
+    private readonly InputAction m_Player_EscapeMenu;
     public struct PlayerActions
     {
         private @MyDefaultInputActions m_Wrapper;
@@ -914,6 +936,7 @@ public partial class @MyDefaultInputActions : IInputActionCollection2, IDisposab
         public InputAction @MouseZoom => m_Wrapper.m_Player_MouseZoom;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @MousePosition => m_Wrapper.m_Player_MousePosition;
+        public InputAction @EscapeMenu => m_Wrapper.m_Player_EscapeMenu;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -941,6 +964,9 @@ public partial class @MyDefaultInputActions : IInputActionCollection2, IDisposab
                 @MousePosition.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMousePosition;
                 @MousePosition.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMousePosition;
                 @MousePosition.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMousePosition;
+                @EscapeMenu.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEscapeMenu;
+                @EscapeMenu.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEscapeMenu;
+                @EscapeMenu.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEscapeMenu;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -963,6 +989,9 @@ public partial class @MyDefaultInputActions : IInputActionCollection2, IDisposab
                 @MousePosition.started += instance.OnMousePosition;
                 @MousePosition.performed += instance.OnMousePosition;
                 @MousePosition.canceled += instance.OnMousePosition;
+                @EscapeMenu.started += instance.OnEscapeMenu;
+                @EscapeMenu.performed += instance.OnEscapeMenu;
+                @EscapeMenu.canceled += instance.OnEscapeMenu;
             }
         }
     }
@@ -1125,6 +1154,7 @@ public partial class @MyDefaultInputActions : IInputActionCollection2, IDisposab
         void OnMouseZoom(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnMousePosition(InputAction.CallbackContext context);
+        void OnEscapeMenu(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

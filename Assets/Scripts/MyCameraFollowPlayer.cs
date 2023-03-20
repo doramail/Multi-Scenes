@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MyCameraFollowPlayer : MonoBehaviour
+public class MyCameraFollowPlayer : MonoBehaviour //Inherits from class `MonoBehaviour`. This makes it attachable to a game object as a component.
 {
     [SerializeField] public Transform target;
     [SerializeField] public float smoothTime = 0.3f;

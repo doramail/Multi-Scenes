@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MyPlayerMovement : MonoBehaviour
+public class MyPlayerMovement : MonoBehaviour //Inherits from class `MonoBehaviour`. This makes it attachable to a game object as a component.
 {
     [SerializeField] MyPlayerController _navetteRetour;
 
