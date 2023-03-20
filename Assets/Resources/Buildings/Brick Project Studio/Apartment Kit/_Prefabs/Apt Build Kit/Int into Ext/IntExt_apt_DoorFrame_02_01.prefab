@@ -180,7 +180,6 @@ GameObject:
   - component: {fileID: 4434496311129384879}
   - component: {fileID: 8149924353738714811}
   - component: {fileID: 7106696268129134758}
-  - component: {fileID: 1163642297015559654}
   - component: {fileID: 4233101470701728330}
   m_Layer: 0
   m_Name: Glass.003
@@ -278,21 +277,6 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e8192f35a44301488ec0f072d9a16fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openandclose: {fileID: 4233101470701728330}
-  open: 0
-  Player: {fileID: 0}
---- !u!114 &1163642297015559654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7942830690319771598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd738191e8d5c4e4bbc20506642b15a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   openandclose: {fileID: 4233101470701728330}

@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 6537932229130571048}
   - component: {fileID: 963706521}
   - component: {fileID: 963706522}
-  - component: {fileID: 621897436445898783}
   m_Layer: 0
   m_Name: Glass.006
   m_TagString: Untagged
@@ -131,21 +130,6 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e8192f35a44301488ec0f072d9a16fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openandclose: {fileID: 963706521}
-  open: 0
-  Player: {fileID: 0}
---- !u!114 &621897436445898783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6725933189404883759}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd738191e8d5c4e4bbc20506642b15a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   openandclose: {fileID: 963706521}

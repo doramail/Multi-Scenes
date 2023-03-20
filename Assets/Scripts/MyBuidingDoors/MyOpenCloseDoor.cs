@@ -18,6 +18,7 @@ namespace SojaExiles
 
         private void OnMouseDown()
         {
+            if (!enabled) return;
             {
                 if (Player)
                 {
@@ -66,7 +67,5 @@ namespace SojaExiles
             open = false;
             yield return new WaitForSeconds(.5f);
         }
-
-
     }
 }

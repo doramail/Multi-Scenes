@@ -19,6 +19,7 @@ namespace SojaExiles
 
         private void OnMouseDown()
         {
+            if (!enabled) return;
             {
                 if (Player)
                 {
