@@ -20,7 +20,7 @@ public class MyPlayerMovement : MonoBehaviour //Inherits from class `MonoBehavio
 
     public void Jump()
     {
-        if (_navetteRetour.grounded)
+        //if (_navetteRetour.grounded)
         {
             _navetteRetour.playerVelocity.y = Mathf.Sqrt(_navetteRetour.jumpForce * -3f * _navetteRetour.gravity);
         }
