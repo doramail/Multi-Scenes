@@ -8,7 +8,6 @@ public class MyVolumeSliderOptionsMenu : MonoBehaviour
 {
     public float volume;
     public AudioMixer mixer;
-    // Start is called before the first frame update
 public void SetVolume(float volume)
     {
         mixer.SetFloat("Volume", volume);
