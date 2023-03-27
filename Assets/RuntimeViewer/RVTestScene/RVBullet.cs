@@ -52,7 +52,7 @@ public class RVBullet : MonoBehaviour
             }
 
             this.gameObject.SetActive(false);
-            GameObject.DestroyObject(this.gameObject);
+            GameObject.Destroy(this.gameObject);
         }
     }
 
@@ -73,6 +73,6 @@ public class RVBullet : MonoBehaviour
         Light light = this.exploder.GetComponentInChildren<Light>();
         light.color = c;
 
-        GameObject.DestroyObject(this.exploder, 0.8f);
+        GameObject.Destroy(this.exploder, 0.8f);
     }
 }

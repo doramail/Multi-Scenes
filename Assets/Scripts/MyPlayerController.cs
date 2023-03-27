@@ -59,6 +59,6 @@ public class MyPlayerController : MonoBehaviour //Inherits from class `MonoBehav
     private void Start()
     {
         _controller = GetComponent<CharacterController>();
-        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+        //UnityEngine.Cursor.lockState = CursorLockMode.Locked;
     }
 }
