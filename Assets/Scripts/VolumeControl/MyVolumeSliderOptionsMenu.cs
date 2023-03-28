@@ -28,17 +28,16 @@ public class MyVolumeSliderOptionsMenu : MonoBehaviour
 
     public void LowGraphicsQuality()
     {
-        QualitySettings.SetQualityLevel(0);
+        QualitySettings.SetQualityLevel(1);
     }
 
     public void MediumGraphicsQuality()
     {
-        QualitySettings.SetQualityLevel(1);
+        QualitySettings.SetQualityLevel(3);
     }
 
     public void HighGraphicsQuality()
     {
-        QualitySettings.SetQualityLevel(2);
+        QualitySettings.SetQualityLevel(5);
     }
-
 }
