@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class MenuImmeuble00 : MonoBehaviour
@@ -45,6 +46,10 @@ public class MenuImmeuble00 : MonoBehaviour
     public void MenuPrincipalQuit()
     {
         Debug.Log("MenuPrincipalQuit Activated");
-        Application.Quit();
+        #if UNITY_EDITOR
+            EditorApplication.ExitPlaymode();
+        #else
+            Application.Quit(); // original code to quit Unity player
+        #endif
     }
 }

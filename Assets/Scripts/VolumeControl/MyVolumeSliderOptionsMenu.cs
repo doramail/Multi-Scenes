@@ -8,8 +8,37 @@ public class MyVolumeSliderOptionsMenu : MonoBehaviour
 {
     public float volume;
     public AudioMixer mixer;
-public void SetVolume(float volume)
+    public float volumeValue;
+    public Slider volumeSlider;
+
+    private void Start()
     {
-        mixer.SetFloat("Volume", volume);
+        volumeSlider.value = PlayerPrefs.GetFloat("Volume");
     }
+
+    private void Update()
+    {
+        mixer.SetFloat("Volume", volumeValue);
+        PlayerPrefs.SetFloat("Volume", volumeValue);
+    }
+    public void SetVolume(float volume)
+    {
+        volumeValue = volume;
+    }
+
+    public void LowGraphicsQuality()
+    {
+        QualitySettings.SetQualityLevel(0);
+    }
+
+    public void MediumGraphicsQuality()
+    {
+        QualitySettings.SetQualityLevel(1);
+    }
+
+    public void HighGraphicsQuality()
+    {
+        QualitySettings.SetQualityLevel(2);
+    }
+
 }
