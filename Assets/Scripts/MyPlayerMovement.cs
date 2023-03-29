@@ -22,6 +22,7 @@ public class MyPlayerMovement : MonoBehaviour //Inherits from class `MonoBehavio
     {
         //if (_navetteRetour.grounded)
         {
+            Debug.Log("From Jump(), Grounded called");
             _navetteRetour.playerVelocity.y = Mathf.Sqrt(_navetteRetour.jumpForce * -3f * _navetteRetour.gravity);
         }
     }

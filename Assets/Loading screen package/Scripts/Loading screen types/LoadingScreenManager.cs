@@ -23,16 +23,14 @@ public class LoadingScreenManager : MonoBehaviour
         _animatorComponent.SetTrigger("Hide");
     }
 
-    public void OnFinishedReveal()
+    public void OnFinishedReveal() // TODO: You have to remove it's content, and load your own scene here. !!
     {
-        // TODO: remove it and load your own scene !!
-        transform.parent.GetComponent<DemoSceneManager>().OnLoadingScreenRevealed();
+        // transform.parent.GetComponent<DemoSceneManager>().OnLoadingScreenRevealed(); // Orignal deactivated byME
     }
 
-    public void OnFinishedHide()
+    public void OnFinishedHide()  // You have to remove it's content and call functions which you want to be called after the loading screen is revealed.
     {
-        // TODO: remove it and call your functions 
-        transform.parent.GetComponent<DemoSceneManager>().OnLoadingScreenHided();
+        // transform.parent.GetComponent<DemoSceneManager>().OnLoadingScreenHided();  // Orignal deactivated byME
     }
 
 }
