@@ -27,7 +27,7 @@ public class MouseLook : MonoBehaviour //Inherits from class `MonoBehaviour`. Th
     {
         playerBody = transform.parent;
         controls = new MyDefaultInputActions();
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
         controls.Player.MouseZoom.performed += _x => scrollingValue = _x.action.ReadValue<float>();
     }
 
@@ -36,14 +36,14 @@ public class MouseLook : MonoBehaviour //Inherits from class `MonoBehaviour`. Th
     // Update is called once per frame
     void Update()
     {
-        Look();
+        //Look();
         ZoomCamera();
     }
 
     public void SetCameraZoom(InputAction.CallbackContext context)
     {
         zoomCameraInput = context.ReadValue<float>();
-        Debug.Log("(MouseLook.cs) zoomCameraInput = " + zoomCameraInput);
+        //Debug.Log("(MouseLook.cs) zoomCameraInput = " + zoomCameraInput);
     }
 
     private void OnEnable()
