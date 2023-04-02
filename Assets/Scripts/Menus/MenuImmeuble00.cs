@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
@@ -25,7 +23,7 @@ public class MenuImmeuble00 : MonoBehaviour
         Debug.Log("MenuPrincipalPlayButton Activated");
         Time.timeScale = 1.0f;
         MainMenuImmeuble00.SetActive(false);
-        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+        //UnityEngine.Cursor.lockState = CursorLockMode.Locked;
 
     }
 

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -26,6 +24,8 @@ public class PauseMenu : MonoBehaviour
 
     public void ResumeGame()
     {
+        //UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+
         pauseMenu.SetActive(false);
         Time.timeScale = 1.0f;
         isGamePaused = false;
@@ -33,7 +33,7 @@ public class PauseMenu : MonoBehaviour
 
     void PauseGame()
     {
-        UnityEngine.Cursor.lockState = CursorLockMode.Confined;
+        //UnityEngine.Cursor.lockState = CursorLockMode.Confined;
         pauseMenu.SetActive(true);
         Time.timeScale = 0.0f;
         isGamePaused = true;
@@ -41,7 +41,7 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
-        UnityEngine.Cursor.lockState = CursorLockMode.Confined;
+        //UnityEngine.Cursor.lockState = CursorLockMode.Confined;
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex); // Load Current Active Scene.
         Time.timeScale = 1.0f;
     }
