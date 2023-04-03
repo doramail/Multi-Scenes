@@ -774,6 +774,54 @@ public partial class @MyDefaultInputActions : IInputActionCollection2, IDisposab
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""MyAndroïdTouch"",
+            ""id"": ""578d1491-7dd6-4ee8-a9a2-e3aa966cdd96"",
+            ""actions"": [
+                {
+                    ""name"": ""TouchPosition"",
+                    ""type"": ""Value"",
+                    ""id"": ""3a10f6dc-f6c6-44bc-bcc6-32aba0c850ae"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""TouchPress"",
+                    ""type"": ""Button"",
+                    ""id"": ""1697c3eb-3fb3-4318-a44c-f052b390ebdd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""9ea2d3a8-31ff-48d1-8339-2e436eaab87b"",
+                    ""path"": ""<Touchscreen>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TouchPosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""912f8038-58ff-4c74-8cd8-adabe403bd84"",
+                    ""path"": ""<Touchscreen>/Press"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TouchPress"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -860,6 +908,10 @@ public partial class @MyDefaultInputActions : IInputActionCollection2, IDisposab
         m_UI_RightClick = m_UI.FindAction("RightClick", throwIfNotFound: true);
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
+        // MyAndroïdTouch
+        m_MyAndroïdTouch = asset.FindActionMap("MyAndroïdTouch", throwIfNotFound: true);
+        m_MyAndroïdTouch_TouchPosition = m_MyAndroïdTouch.FindAction("TouchPosition", throwIfNotFound: true);
+        m_MyAndroïdTouch_TouchPress = m_MyAndroïdTouch.FindAction("TouchPress", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1101,6 +1153,47 @@ public partial class @MyDefaultInputActions : IInputActionCollection2, IDisposab
         }
     }
     public UIActions @UI => new UIActions(this);
+
+    // MyAndroïdTouch
+    private readonly InputActionMap m_MyAndroïdTouch;
+    private IMyAndroïdTouchActions m_MyAndroïdTouchActionsCallbackInterface;
+    private readonly InputAction m_MyAndroïdTouch_TouchPosition;
+    private readonly InputAction m_MyAndroïdTouch_TouchPress;
+    public struct MyAndroïdTouchActions
+    {
+        private @MyDefaultInputActions m_Wrapper;
+        public MyAndroïdTouchActions(@MyDefaultInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @TouchPosition => m_Wrapper.m_MyAndroïdTouch_TouchPosition;
+        public InputAction @TouchPress => m_Wrapper.m_MyAndroïdTouch_TouchPress;
+        public InputActionMap Get() { return m_Wrapper.m_MyAndroïdTouch; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MyAndroïdTouchActions set) { return set.Get(); }
+        public void SetCallbacks(IMyAndroïdTouchActions instance)
+        {
+            if (m_Wrapper.m_MyAndroïdTouchActionsCallbackInterface != null)
+            {
+                @TouchPosition.started -= m_Wrapper.m_MyAndroïdTouchActionsCallbackInterface.OnTouchPosition;
+                @TouchPosition.performed -= m_Wrapper.m_MyAndroïdTouchActionsCallbackInterface.OnTouchPosition;
+                @TouchPosition.canceled -= m_Wrapper.m_MyAndroïdTouchActionsCallbackInterface.OnTouchPosition;
+                @TouchPress.started -= m_Wrapper.m_MyAndroïdTouchActionsCallbackInterface.OnTouchPress;
+                @TouchPress.performed -= m_Wrapper.m_MyAndroïdTouchActionsCallbackInterface.OnTouchPress;
+                @TouchPress.canceled -= m_Wrapper.m_MyAndroïdTouchActionsCallbackInterface.OnTouchPress;
+            }
+            m_Wrapper.m_MyAndroïdTouchActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @TouchPosition.started += instance.OnTouchPosition;
+                @TouchPosition.performed += instance.OnTouchPosition;
+                @TouchPosition.canceled += instance.OnTouchPosition;
+                @TouchPress.started += instance.OnTouchPress;
+                @TouchPress.performed += instance.OnTouchPress;
+                @TouchPress.canceled += instance.OnTouchPress;
+            }
+        }
+    }
+    public MyAndroïdTouchActions @MyAndroïdTouch => new MyAndroïdTouchActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -1168,5 +1261,10 @@ public partial class @MyDefaultInputActions : IInputActionCollection2, IDisposab
         void OnRightClick(InputAction.CallbackContext context);
         void OnTrackedDevicePosition(InputAction.CallbackContext context);
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
+    }
+    public interface IMyAndroïdTouchActions
+    {
+        void OnTouchPosition(InputAction.CallbackContext context);
+        void OnTouchPress(InputAction.CallbackContext context);
     }
 }

@@ -52,6 +52,12 @@ public class MyPlayerController : MonoBehaviour //Inherits from class `MonoBehav
         _characterController.minMoveDistance = 0.0f;
     }
 
+    private void Start()
+    {
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
+    }
+
     private void Update()
     {
         ApplyGravity();

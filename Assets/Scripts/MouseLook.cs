@@ -80,7 +80,7 @@ public class MouseLook : MonoBehaviour //Inherits from class `MonoBehaviour`. Th
     private void ZoomCamera()
     {
         read_FieldOfView = this.GetComponent<Camera>().fieldOfView;
-        Debug.Log("(MouseLook.cs) Facteur de zoom lu " + read_FieldOfView);
+        //Debug.Log("(MouseLook.cs) Facteur de zoom lu " + read_FieldOfView);
 
         if (scrollingValue > 0.0f)
         {
