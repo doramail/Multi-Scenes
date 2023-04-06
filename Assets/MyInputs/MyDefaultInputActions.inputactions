@@ -754,7 +754,7 @@
             ]
         },
         {
-            "name": "MyAndroïdTouch",
+            "name": "MyTouch",
             "id": "578d1491-7dd6-4ee8-a9a2-e3aa966cdd96",
             "actions": [
                 {
@@ -783,7 +783,7 @@
                     "path": "<Touchscreen>/position",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Touch",
                     "action": "TouchPosition",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -794,7 +794,7 @@
                     "path": "<Touchscreen>/Press",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Touch",
                     "action": "TouchPress",
                     "isComposite": false,
                     "isPartOfComposite": false
