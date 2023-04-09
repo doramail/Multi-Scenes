@@ -7,8 +7,8 @@ public class MyPlayerController : MonoBehaviour //Inherits from class `MonoBehav
     #region Variables: Movement
 
     private Vector2 _input;
-    private CharacterController _characterController;
-    private Vector3 _direction;
+    public CharacterController _characterController;
+    public Vector3 _direction;
 
     [SerializeField] private float speed;
 
@@ -54,15 +54,16 @@ public class MyPlayerController : MonoBehaviour //Inherits from class `MonoBehav
 
     private void Start()
     {
+        // gameObject.SetActive(Application.isMobilePlatform); // Works for WebGL too !
         //Cursor.lockState = CursorLockMode.Locked;
         //Cursor.visible = false;
     }
 
     private void Update()
     {
-        ApplyGravity();
+        //ApplyGravity();
         ApplyMovement();
-        PlayerLook();
+        //PlayerLook();
     }
 
     private void ApplyGravity()
@@ -80,7 +81,8 @@ public class MyPlayerController : MonoBehaviour //Inherits from class `MonoBehav
 
     private void ApplyMovement()
     {
-        _characterController.Move(transform.TransformDirection(_direction * speed * Time.deltaTime));
+        //_characterController.Move(transform.TransformDirection(_direction * speed * Time.deltaTime));
+        _characterController.Move(_direction * Time.deltaTime);
     }
 
     public void JumpCharacter(InputAction.CallbackContext ctx)
@@ -103,8 +105,12 @@ public class MyPlayerController : MonoBehaviour //Inherits from class `MonoBehav
 
     public void Move(InputAction.CallbackContext context)
     {
+        Debug.Log("Move Context returned = " + context);
         _input = context.ReadValue<Vector2>();
         _direction = new Vector3(_input.x, 0.0f, _input.y);
+        Debug.Log("Move _direction x vector = " + _direction.x);
+        Debug.Log("Move _direction y vector = " + _direction.y);
+        Debug.Log("Move _direction z vector = " + _direction.z);
     }
 
     public void PlayerLook()
@@ -136,6 +142,6 @@ public class MyPlayerController : MonoBehaviour //Inherits from class `MonoBehav
 
     public void LookCharacter(InputAction.CallbackContext ctx)
     {
-        lookPos = (ctx.ReadValue<Vector2>());
+        lookPos = ctx.ReadValue<Vector2>();
     }
 }

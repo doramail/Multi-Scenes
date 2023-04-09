@@ -109,7 +109,7 @@ public partial class @MyDefaultInputActions : IInputActionCollection2, IDisposab
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
+                    ""groups"": """",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -120,7 +120,7 @@ public partial class @MyDefaultInputActions : IInputActionCollection2, IDisposab
                     ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
+                    ""groups"": """",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -131,7 +131,7 @@ public partial class @MyDefaultInputActions : IInputActionCollection2, IDisposab
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
+                    ""groups"": """",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -142,7 +142,7 @@ public partial class @MyDefaultInputActions : IInputActionCollection2, IDisposab
                     ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
+                    ""groups"": """",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -153,7 +153,7 @@ public partial class @MyDefaultInputActions : IInputActionCollection2, IDisposab
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
+                    ""groups"": """",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -164,7 +164,7 @@ public partial class @MyDefaultInputActions : IInputActionCollection2, IDisposab
                     ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
+                    ""groups"": """",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -175,7 +175,7 @@ public partial class @MyDefaultInputActions : IInputActionCollection2, IDisposab
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
+                    ""groups"": """",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -186,7 +186,7 @@ public partial class @MyDefaultInputActions : IInputActionCollection2, IDisposab
                     ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
+                    ""groups"": """",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -197,7 +197,7 @@ public partial class @MyDefaultInputActions : IInputActionCollection2, IDisposab
                     ""path"": ""<Pointer>/delta"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
+                    ""groups"": ""Keyboard&Mouse;Touch"",
                     ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -254,6 +254,105 @@ public partial class @MyDefaultInputActions : IInputActionCollection2, IDisposab
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Escape (Menu)"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""622bcefc-5265-4e84-abe8-6aa8d198321f"",
+                    ""path"": ""<XRController>/{Primary2DAxis}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a7d542cb-f953-4cb5-9e86-34110d1441d1"",
+                    ""path"": ""<Joystick>/stick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joystick"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7f7b64f4-b742-44c2-8bd1-ae3c9210f2e6"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad;Touch"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0919d7c4-bb8a-4363-8da9-7e5cbdeb4a2c"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8e4ef0e1-a642-4453-8f6d-4be7d6a6a6b3"",
+                    ""path"": ""<Joystick>/{Hatswitch}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joystick"",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5206b134-4db8-44d6-868e-78df39003501"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4f917a08-1e63-42ee-8da4-061f5ccf23f4"",
+                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Touch"",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b8f268f0-c621-43b8-9127-c29b00d1090f"",
+                    ""path"": ""<Joystick>/trigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joystick"",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""34541093-9770-4769-9696-055a9e1792e9"",
+                    ""path"": ""<XRController>/{PrimaryAction}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR"",
+                    ""action"": ""Fire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -780,7 +879,7 @@ public partial class @MyDefaultInputActions : IInputActionCollection2, IDisposab
             ""id"": ""578d1491-7dd6-4ee8-a9a2-e3aa966cdd96"",
             ""actions"": [
                 {
-                    ""name"": ""TouchPosition"",
+                    ""name"": ""MyTouchPosition"",
                     ""type"": ""Value"",
                     ""id"": ""3a10f6dc-f6c6-44bc-bcc6-32aba0c850ae"",
                     ""expectedControlType"": ""Vector2"",
@@ -789,7 +888,7 @@ public partial class @MyDefaultInputActions : IInputActionCollection2, IDisposab
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""TouchPress"",
+                    ""name"": ""MyTouchPress"",
                     ""type"": ""Button"",
                     ""id"": ""1697c3eb-3fb3-4318-a44c-f052b390ebdd"",
                     ""expectedControlType"": ""Button"",
@@ -806,18 +905,18 @@ public partial class @MyDefaultInputActions : IInputActionCollection2, IDisposab
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Touch"",
-                    ""action"": ""TouchPosition"",
+                    ""action"": ""MyTouchPosition"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""912f8038-58ff-4c74-8cd8-adabe403bd84"",
-                    ""path"": ""<Touchscreen>/Press"",
+                    ""id"": ""d6d4d12f-ecfc-44eb-a524-a0ba7382937c"",
+                    ""path"": ""<Touchscreen>/touch*/Press"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Touch"",
-                    ""action"": ""TouchPress"",
+                    ""action"": ""MyTouchPress"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -910,8 +1009,8 @@ public partial class @MyDefaultInputActions : IInputActionCollection2, IDisposab
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
         // MyTouch
         m_MyTouch = asset.FindActionMap("MyTouch", throwIfNotFound: true);
-        m_MyTouch_TouchPosition = m_MyTouch.FindAction("TouchPosition", throwIfNotFound: true);
-        m_MyTouch_TouchPress = m_MyTouch.FindAction("TouchPress", throwIfNotFound: true);
+        m_MyTouch_MyTouchPosition = m_MyTouch.FindAction("MyTouchPosition", throwIfNotFound: true);
+        m_MyTouch_MyTouchPress = m_MyTouch.FindAction("MyTouchPress", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1157,14 +1256,14 @@ public partial class @MyDefaultInputActions : IInputActionCollection2, IDisposab
     // MyTouch
     private readonly InputActionMap m_MyTouch;
     private IMyTouchActions m_MyTouchActionsCallbackInterface;
-    private readonly InputAction m_MyTouch_TouchPosition;
-    private readonly InputAction m_MyTouch_TouchPress;
+    private readonly InputAction m_MyTouch_MyTouchPosition;
+    private readonly InputAction m_MyTouch_MyTouchPress;
     public struct MyTouchActions
     {
         private @MyDefaultInputActions m_Wrapper;
         public MyTouchActions(@MyDefaultInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @TouchPosition => m_Wrapper.m_MyTouch_TouchPosition;
-        public InputAction @TouchPress => m_Wrapper.m_MyTouch_TouchPress;
+        public InputAction @MyTouchPosition => m_Wrapper.m_MyTouch_MyTouchPosition;
+        public InputAction @MyTouchPress => m_Wrapper.m_MyTouch_MyTouchPress;
         public InputActionMap Get() { return m_Wrapper.m_MyTouch; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1174,22 +1273,22 @@ public partial class @MyDefaultInputActions : IInputActionCollection2, IDisposab
         {
             if (m_Wrapper.m_MyTouchActionsCallbackInterface != null)
             {
-                @TouchPosition.started -= m_Wrapper.m_MyTouchActionsCallbackInterface.OnTouchPosition;
-                @TouchPosition.performed -= m_Wrapper.m_MyTouchActionsCallbackInterface.OnTouchPosition;
-                @TouchPosition.canceled -= m_Wrapper.m_MyTouchActionsCallbackInterface.OnTouchPosition;
-                @TouchPress.started -= m_Wrapper.m_MyTouchActionsCallbackInterface.OnTouchPress;
-                @TouchPress.performed -= m_Wrapper.m_MyTouchActionsCallbackInterface.OnTouchPress;
-                @TouchPress.canceled -= m_Wrapper.m_MyTouchActionsCallbackInterface.OnTouchPress;
+                @MyTouchPosition.started -= m_Wrapper.m_MyTouchActionsCallbackInterface.OnMyTouchPosition;
+                @MyTouchPosition.performed -= m_Wrapper.m_MyTouchActionsCallbackInterface.OnMyTouchPosition;
+                @MyTouchPosition.canceled -= m_Wrapper.m_MyTouchActionsCallbackInterface.OnMyTouchPosition;
+                @MyTouchPress.started -= m_Wrapper.m_MyTouchActionsCallbackInterface.OnMyTouchPress;
+                @MyTouchPress.performed -= m_Wrapper.m_MyTouchActionsCallbackInterface.OnMyTouchPress;
+                @MyTouchPress.canceled -= m_Wrapper.m_MyTouchActionsCallbackInterface.OnMyTouchPress;
             }
             m_Wrapper.m_MyTouchActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @TouchPosition.started += instance.OnTouchPosition;
-                @TouchPosition.performed += instance.OnTouchPosition;
-                @TouchPosition.canceled += instance.OnTouchPosition;
-                @TouchPress.started += instance.OnTouchPress;
-                @TouchPress.performed += instance.OnTouchPress;
-                @TouchPress.canceled += instance.OnTouchPress;
+                @MyTouchPosition.started += instance.OnMyTouchPosition;
+                @MyTouchPosition.performed += instance.OnMyTouchPosition;
+                @MyTouchPosition.canceled += instance.OnMyTouchPosition;
+                @MyTouchPress.started += instance.OnMyTouchPress;
+                @MyTouchPress.performed += instance.OnMyTouchPress;
+                @MyTouchPress.canceled += instance.OnMyTouchPress;
             }
         }
     }
@@ -1264,7 +1363,7 @@ public partial class @MyDefaultInputActions : IInputActionCollection2, IDisposab
     }
     public interface IMyTouchActions
     {
-        void OnTouchPosition(InputAction.CallbackContext context);
-        void OnTouchPress(InputAction.CallbackContext context);
+        void OnMyTouchPosition(InputAction.CallbackContext context);
+        void OnMyTouchPress(InputAction.CallbackContext context);
     }
 }

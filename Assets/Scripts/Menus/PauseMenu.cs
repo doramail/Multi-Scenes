@@ -9,6 +9,11 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
+        EscapeKey();
+    }
+
+    public void EscapeKey()
+    {
         if (Input.GetKeyUp(KeyCode.Escape))
         {
             if (isGamePaused)
@@ -48,10 +53,10 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        #if UNITY_EDITOR
-            EditorApplication.ExitPlaymode();
-        #else
+#if UNITY_EDITOR
+        EditorApplication.ExitPlaymode();
+#else
             Application.Quit(); // original code to quit Unity player
-        #endif
+#endif
     }
 }

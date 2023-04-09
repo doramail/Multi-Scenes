@@ -22,7 +22,7 @@ public class MenuImmeuble00 : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         MainMenuImmeuble00.SetActive(false);
-        Cursor.visible = false;
+        //Cursor.visible = false;
         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
         Debug.Log("From 'MenuPrincipalPlayButton', Cursor.lockState = " + Cursor.lockState);
 
@@ -34,7 +34,7 @@ public class MenuImmeuble00 : MonoBehaviour
         //Debug.Log("MenuPrincipalOptionsButton Activated");
         OptionsMenuImmeuble00.SetActive(true);
         MainMenuImmeuble00.SetActive(false);
-        Cursor.lockState = CursorLockMode.None;
+        //Cursor.lockState = CursorLockMode.None;
         //UnityEngine.Cursor.lockState = CursorLockMode.Locked; // Curseur souris vérouillé, (bloqué au centre + caché)
         Debug.Log("From 'MenuPrincipalOptionsButton', Cursor.lockState = " + Cursor.lockState);
     }
